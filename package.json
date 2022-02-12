@@ -1,0 +1,22 @@
+{
+  "name": "html",
+  "version": "1.0.0",
+  "description": "typescrip - 静的型付けのJavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/umanari145/typescript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/umanari145/typescript/issues"
+  },
+  "homepage": "https://github.com/umanari145/typescript#readme",
+  "dependencies": {
+    "typescript": "^4.5.5"
+  }
+}
