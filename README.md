@@ -25,3 +25,39 @@ npm install -D typescript
 ./node_modules/typescript/bin/tsc lesson.ts (--target ES2015)
 # index.jsが作成される
 ```
+
+### コンパイラの設定など
+監視
+```
+ ./node_modules/typescript/bin/tsc lesson.ts --target ES2015 --watch
+```
+
+tsconfig.jsonをおけば一括の置換が可能
+```
+# 以下のコマンドで作成可能
+./node_modules/typescript/bin/tsc --init
+＃以下で通常通りのコマンド実行が可能
+./node_modules/typescript/bin/tsc 
+```
+重要な設定値を確認
+```
+  // トランスパイル
+  "target": "es2015",   
+
+  // ホワイトリスト
+  "include": [
+    "****"
+  ],
+  // ブラックリスト
+  "exclude": [
+
+  // コンパイラ(ES2015用など設定できる)
+  // 通常はtargetによって自動的に決まる。[](空)にすると当たり前だが一歳コンパイルできなくなる
+  lib: [
+      'ES6'
+  ]
+  // allowJS,checkJS JSのチェックをするか否か
+  // jsx React用
+  // declaration、declarationMap 他人に渡したい時
+  // sourceMap ブラウザでtsのデバッグを行いたいとき
+```
