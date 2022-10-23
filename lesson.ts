@@ -1,6 +1,7 @@
 let hello: string ='hello';
 console.log(hello);
 
+// 引数には型推論が効くが、戻り値には効かない
 function add(a: number, b: number): number {
     return a + b;
 }
@@ -55,7 +56,7 @@ enum Size {
 
 class clothes  {
     price: number;
-    size: Size
+    size: Size;
 }
 
 let c = new clothes();
@@ -75,8 +76,67 @@ numStr = "ochiai";
 numStr = 12345;
 
 //リテラル型　特定の文字列 (単純な定数の定義)
+// constを使うと自動的に決まる
 const manager = 'nagashima shigeo';
 let league: 'central' | 'pacific'; //enumにちかい　より簡便なパターンという位置付け
 
+// 以下のように入れるとコンパイル時にエラーが起きる
+// league = 'major';
+
+function sayHello(): void {
+    console.log('本日は晴天也');
+}
 
 
+let tmp: undefined;
+// null型もあるがundefinedを入れることが可能
+let tmpNull: null = undefined
+
+// 変数に関数を入れるパターン
+const anotherAdd :(n1: number, n2: number) => number = function(num1, num2) {
+    return num1 + num2;
+}
+
+console.log(anotherAdd(3,4))
+
+// アロー関数の記載方法
+const doubleNumber = (num: number): number => num =  num * 2;
+
+console.log(doubleNumber(3));
+
+// callback型について callbackの引数と戻り値が必要
+function doubleAndHandle(num: number, cb: (num: number) => number): void{
+    const doubleNum = cb(num);
+    console.log(doubleNum)
+}
+doubleAndHandle(10, doubleNum => {
+    return doubleNum + 1;
+})
+
+// unknown型 anyよりも若干厳しい比較的縛りの緩い型
+let unknownInput : unknown;
+let anyInput: any
+let text: string
+
+anyInput = 22;
+anyInput = 'aaaa';
+anyInput = true;
+// OK
+text = anyInput;
+
+unknownInput = 22;
+unknownInput = 'aaaa';
+unknownInput = true;
+// NG
+// text = unknownInput;
+// 型の保証があればOK
+if (typeof unknownInput == 'string') {
+    text = unknownInput;
+}
+
+// 何も返さない場合
+function error(message: string): never {
+    throw new Error(message)
+}
+
+console.log(error('エラー発生'))
