@@ -60,4 +60,11 @@ tsconfig.jsonをおけば一括の置換が可能
   // jsx React用
   // declaration、declarationMap 他人に渡したい時
   // sourceMap ブラウザでtsのデバッグを行いたいとき
+  // rootDir 読み込み先
+  // outDir output先
+  // noEmit エラーが出た場合出力しない
+  // strict直下は細かい制約系のオプション
+  // noUnusedLocals 未使用ローカル変数をチェック
+  // noUnusedParameters 未使用のパラメータ
+  // noImplicitReturns 関数戻り値の型注釈を必須
 ```

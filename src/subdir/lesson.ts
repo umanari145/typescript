@@ -110,6 +110,7 @@ function doubleAndHandle(num: number, cb: (num: number) => number): void{
     console.log(doubleNum)
 }
 doubleAndHandle(10, doubleNum => {
+    let hogehoge;
     return doubleNum + 1;
 })
 
@@ -117,7 +118,6 @@ doubleAndHandle(10, doubleNum => {
 let unknownInput : unknown;
 let anyInput: any
 let text: string
-
 anyInput = 22;
 anyInput = 'aaaa';
 anyInput = true;
