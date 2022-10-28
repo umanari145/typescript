@@ -37,6 +37,8 @@ class People {
     }
 }
 
+// 
+// 他の言語仕様と同様、継承や抽象クラスなども可能(抽象クラスはtypescriptのみで対応可能)
 class Teacher extends People{
     // getterの書き方
     get subject(): string {
