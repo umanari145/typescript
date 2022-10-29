@@ -46,7 +46,8 @@ let baseballPalyer0 = ['kiyohara kazuhiro', 525];
 // 型を決めるtupple n番目の型を決める
 let baseballPalyer: [string, number] = ['kiyohara kazuhiro', 525];
 
-
+// タイプエイリアス
+type ClothSize = 'short' | 'tall'
 //enum型の書き方
 enum Size {
     S = 'Small',
@@ -54,9 +55,11 @@ enum Size {
     L = 'Large'
 };
 
+let clothSize: ClothSize;
 class clothes  {
     price: number;
     size: Size;
+
 }
 
 let c = new clothes();
