@@ -153,3 +153,66 @@ input.value
 // 絶対にnullじゃない場合の記述行末に!をつける
 // nullの条件判定をしない分コストが下がる
 const input2 = document.getElementById('hogehoge')!;
+
+// インデックスシグネチャ
+interface Designer {
+    name: string;
+    [index: string]: string;
+}
+
+const designer: Designer = {
+    name: 'Yamada'
+}
+//動的なプロパティを持たせることができる
+designer.role = 'web'
+console.log(designer);
+
+// 関数のオーバーロード 引数が複数ある場合の方の指定
+function toUpperCase2(x: string): string;
+function toUpperCase2(x: string | number) {
+    if (typeof x === 'string') {
+        return x.toUpperCase();
+    }
+    return ''
+}
+
+// 関数の型を関数に伝える
+const toUpperhello = toUpperCase2('hello')
+
+// オプショナルチェイニング
+interface DownloadedData {
+    id: number;
+    user?: {
+        name?: {
+            first: string,
+            last: string
+        }
+    }
+}
+
+const downloadedData: DownloadedData = {
+    id: 1
+}
+
+//通常の場合、下記の書き方だとundefinedが出てしまう
+//console.log(downloadedData.user.name)
+//もしデータがあれば出力(nullであることを許可)
+console.log(downloadedData.user?.name?.first)
+
+//NullishCoalscing
+// 三項演算子に近いがundefinedとnullのみ判定される
+const userData = downloadedData.user ?? 'no-user'
+// カラ文字、0, falseなどでも'no-userになってしまう
+const userData2 = downloadedData.user || 'no-user'
+
+//LookUp型
+//以下のように書くとtypeで正確に型の判定ができる
+type id = DownloadedData["id"];
+
+// 型の互換性
+let target = 'hello';
+let source: 'hello' = 'hello'
+// target(string型) > source('hello型')はOK
+target = source;
+// target(string型) > source('hello型')はなのでsourceにtargetは入らない
+// source = target;
