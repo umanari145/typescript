@@ -52,7 +52,7 @@ tsconfig.jsonをおけば一括の置換が可能
   "exclude": [
 
   // コンパイラ(ES2015用など設定できる)
-  // 通常はtargetによって自動的に決まる。[](空)にすると当たり前だが一歳コンパイルできなくなる
+  // 通常はtargetによって自動的に決まる。[](空)にすると当たり前だが一切コンパイルできなくなる
   lib: [
       'ES6'
   ]
@@ -67,4 +67,7 @@ tsconfig.jsonをおけば一括の置換が可能
   // noUnusedLocals 未使用ローカル変数をチェック
   // noUnusedParameters 未使用のパラメータ
   // noImplicitReturns 関数戻り値の型注釈を必須
+  // json使用時のオプション
+  "moduleResolution": "node", 
+  "resolveJsonModule": true,  
 ```

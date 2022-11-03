@@ -216,3 +216,13 @@ let source: 'hello' = 'hello'
 target = source;
 // target(string型) > source('hello型')はなのでsourceにtargetは入らない
 // source = target;
+
+enum Color {
+    RED,
+    BLUE
+};
+
+let target2 = 100;
+let source2 = Color.RED
+// 互換性あり
+target2 = source2

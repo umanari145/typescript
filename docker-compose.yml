@@ -2,6 +2,7 @@ version: '3'
 services:
   php7:
     image: php:7.3-apache
+    container_name: ts_php
     ports:
         - "80:80"
     volumes:
@@ -11,6 +12,7 @@ services:
      
   node:
     image: node:8.16.0-alpine
+    container_name: ts_node
     volumes:
         - .:/var/www/html
     tty: true
