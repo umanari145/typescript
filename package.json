@@ -17,7 +17,11 @@
   },
   "homepage": "https://github.com/umanari145/typescript#readme",
   "dependencies": {
+    "browser-sync-webpack-plugin": "^2.3.0",
     "laravel-mix": "^6.0.49",
     "typescript": "^4.5.5"
+  },
+  "devDependencies": {
+    "ts-loader": "^9.4.1"
   }
 }

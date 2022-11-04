@@ -71,3 +71,16 @@ tsconfig.jsonをおけば一括の置換が可能
   "moduleResolution": "node", 
   "resolveJsonModule": true,  
 ```
+
+
+## laravel-mixを使ったコンパイル
+
+build
+```
+npx mix build
+```
+
+watch
+```
+npx mix watch
+```

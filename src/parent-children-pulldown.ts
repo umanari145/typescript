@@ -9,22 +9,25 @@ class ParentChildrenPulldown {
     ) {
     }
 
-    parent_add_event_linster() {
+    add_parent_event_linster() {
+        console.log(this.master);
         const parent_target_element = document.querySelector(this.parent_target_name)!;
         parent_target_element.addEventListener('change', (event) => {
-            console.log(event);
+            const target_selector = event!.target;
+            const value = target_selector!.value;
+            console.log(value)
+            const children_element = document.querySelector(this.child_target_name)!;
+            console.log(children_element);
         });
-        console.log(this.child_target_name);
-        console.log(this.master);
     }
+
+    
 }
 
-console.log('倉橋');
-console.log(city_pref);
 const parent_child_pulldown =  new ParentChildrenPulldown(
-    'city',
-    'town',
+    'select[name="city"]',
+    'select[name="town"]',
     city_pref
 );
 
-parent_child_pulldown.parent_add_event_linster();
+parent_child_pulldown.add_parent_event_linster();

@@ -5,15 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./dist/parent-children-pulldown.js">
-    </script>
 </head>
 <body>
     <h1>連動型のプルダウン</h1>
 
     <div>
         <span>都道府県</span>
-        <select name="city" id="">
+        <select name="city">
             <option value=""></option>
             <option value="11">東京</option>
             <option value="12">千葉</option>
@@ -25,4 +23,6 @@
     </div>
     <div id="city_pref_json"></div>
 </body>
+    <script src="./dist/app.js?time=<?php echo time();?>"></script>
+
 </html>

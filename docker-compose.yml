@@ -11,7 +11,7 @@ services:
      - typescript
      
   node:
-    image: node:8.16.0-alpine
+    image: node:14.2-alpine
     container_name: ts_node
     volumes:
         - .:/var/www/html
