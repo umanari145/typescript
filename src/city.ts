@@ -1,8 +1,8 @@
-class Location {
+class City {
  
     constructor(
-        private code: string, 
-        private name: string
+        private city_code: string, 
+        private city_name: string 
     ) {
     }
 }
