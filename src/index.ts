@@ -1,20 +1,21 @@
 import city_pref from './city_pref.json';
 import LoadCityJson from './LoadCityJson';
 
-/*const load_city_json =  new LoadCityJson(
-    city_pref.city as Map<string, string>!,
-    city_pref.town  as Map<string, Map<string, string>>
-);*/
+// json読み込んだ時点で既に理想の型が取得できるので不要
+console.log(city_pref);
 
-//console.log(city_pref.city);
-//const city3: City = JSON.parse(`{"11":"東京","12":"千葉"}`); 
-//let city_str: unknown = city_pref.city;
-//console.log(city_pref.city);
-
-const city = JSON.parse(city_pref.city) 
+// 意味不明な変換(stringifyからparseに)
+/*let bbb:string = JSON.stringify(city_pref.city);
+console.log(bbb);
+const city = JSON.parse(bbb) 
+// 出力できる
 console.log(city);
-
 interface City {
   pref_code: number;
   pref_name: string
-}
+}*/
+
+/*const load_city_json = new LoadCityJson(
+  city_pref.city,
+  city_pref.town
+);*/
