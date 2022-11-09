@@ -24,5 +24,4 @@
     <div id="city_pref_json"></div>
 </body>
     <script src="./dist/app.js?time=<?php echo time();?>"></script>
-
 </html>

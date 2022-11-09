@@ -1,26 +1,28 @@
+import City from './City';
+import Town from './Town';
 
 export default class LoadCityJson {
 
     constructor(
-        private _cities: Map<string, string>,
-        private _towns: Map<string, Map<string, string>>
+        private _cities: Array<City>,
+        private _towns: Array<Town>
     ) {
 
     }
 
-    get cities(): Map<string, string> {
+    get cities(): Array<City> {
         return this._cities;
     }
 
-    set cities(cities: Map<string, string>) {
+    set cities(cities: Array<City>) {
         this._cities = cities;
     }
 
-    get towns(): Map<string, Map<string, string>> {
+    get towns(): Array<Town> {
         return this._towns;
     }
 
-    set towns(towns: Map<string, Map<string, string>>) {
+    set towns(towns: Array<Town>) {
         this._towns = towns;
     }
 }

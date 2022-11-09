@@ -1,8 +1,4 @@
-class City {
- 
-    constructor(
-        private city_code: string, 
-        private city_name: string 
-    ) {
-    }
+export default interface City {
+    code: number;
+    name: string
 }

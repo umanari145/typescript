@@ -1,13 +1,9 @@
 import city_pref from './city_pref.json';
-import LoadCityJson from './LoadCityJson';
+//import City from './City';
+//import Town from './Town';
+//import LoadCityJson from './LoadCityJson';
 
-// json読み込んだ時点で既に理想の型が取得できるので不要
-console.log(city_pref);
-
-// 意味不明な変換(stringifyからparseに)
-/*let bbb:string = JSON.stringify(city_pref.city);
-console.log(bbb);
-const city = JSON.parse(bbb) 
+/*
 // 出力できる
 console.log(city);
 interface City {
@@ -15,7 +11,29 @@ interface City {
   pref_name: string
 }*/
 
-/*const load_city_json = new LoadCityJson(
-  city_pref.city,
-  city_pref.town
-);*/
+/*let cities = new Map<string, string>();
+city_pref.city.forEach ((city) => {
+  cities.set(city.code, city.name);
+})*/
+/*city_pref.town.forEach ((town) => {
+  cities.set(city.code, city.name);
+})*/
+
+// これでも一応読み込むことはできるが・・・一段下の方がエラーでない
+//const cities: Array<City> = city_pref.city;
+//一般的なクラスへの転換
+//const cities: Array<City> = JSON.parse(JSON.stringify(city_pref.city));
+//const towns: Array<Town> = JSON.parse(JSON.stringify(city_pref.town));
+//const load_city_json = new LoadCityJson(cities, towns);
+/*console.log(cities);
+console.log(towns);
+console.log(load_city_json);
+*/
+// 型指定なければ一気に読み込める
+const tmp = JSON.parse(JSON.stringify(city_pref));
+console.log(tmp)
+const cities: Map<number, string> = tmp['city'];
+console.log(cities);
+const towns: Map<number, Map<string, string>> = tmp['town'];
+console.log(towns);
+
