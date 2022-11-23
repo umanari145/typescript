@@ -167,7 +167,7 @@ const designer: Designer = {
 designer.role = 'web'
 console.log(designer);
 
-// 関数のオーバーロード 引数が複数ある場合の方の指定
+// 関数のオーバーロード 引数が複数ある場合の方の指定(上のものが優先される)
 function toUpperCase2(x: string): string;
 function toUpperCase2(x: string | number) {
     if (typeof x === 'string') {
@@ -250,3 +250,6 @@ let car_instance = new AdvancedCar();
 //person_instance = car_instance
 
 //TypeScriptの厳密性とJavaScriptの柔軟性
+
+//TypeScript 数字＋文字列→文字列
+// https://github.com/microsoft/TypeScript/blob/main/doc/spec-ARCHIVED.md#4.19.2
