@@ -226,3 +226,27 @@ let target2 = 100;
 let source2 = Color.RED
 // 互換性あり
 target2 = source2
+
+let target_func = function(a: string, b: string){}
+let source_func = function(a: string){}
+
+target_func = source_func;
+// 最初の引数のみ有効になる
+target_func('hi', 'source');
+
+class AdvancedPerson {
+    name: string = 'Peter'
+    private age: number = 35;
+}
+
+class AdvancedCar {
+    name: string = 'Prius';
+    age: number = 35;
+}
+
+let person_instance = new AdvancedPerson();
+let car_instance = new AdvancedCar();
+// 変数に互換性がないためエラーが出てしまう
+//person_instance = car_instance
+
+//TypeScriptの厳密性とJavaScriptの柔軟性
