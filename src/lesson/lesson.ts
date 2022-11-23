@@ -6,6 +6,19 @@ function add(a: number, b: number): number {
     return a + b;
 }
 
+// 変数代入
+let add2 = function(a: number, b:number): number {
+    return a + b;
+}
+
+console.log(add2(1,3))
+
+let add3 = (a: number, b:number): number => {
+    return a + b;
+};
+
+console.log(add3(1,3));
+
 //通常の型定義
 let isCheck: boolean = true;
 //let isCheck2: boolean = "aaaa"; もちろんエラーになる
@@ -143,3 +156,30 @@ function error(message: string): never {
 }
 
 console.log(error('エラー発生'))
+
+// 配列の定義は以下のようにできる
+let data:Array<string> = ['Java', 'Python', 'PHP'];
+let data_1: string[] = ['Java', 'Python', 'PHP'];
+console.log(data);
+console.log(data_1);
+
+let data2: number[][] = [
+    [1,2,3],
+    [4,5,6],
+]
+console.log(data2)
+
+let data3: readonly string[] = ['.net', 'Go'];
+console.log(data3);
+// data3[1] = 'aaaaa' //エラーになる
+
+
+//　一般的な連想配列(ハッシュ)
+let sample_obj: {
+    [index: string]: string;
+} = {
+    'name': '山田太郎',
+    'email': 'sample@gmail.com'
+};
+
+console.log(sample_obj['name']);
