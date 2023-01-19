@@ -183,3 +183,4 @@ let sample_obj: {
 };
 
 console.log(sample_obj['name']);
+

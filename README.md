@@ -84,3 +84,14 @@ watch
 ```
 npx mix watch
 ```
+
+## 直実行
+コンパイル→実行までを一括で行う
+https://www.wakuwakubank.com/posts/726-typescript-ts-node/
+
+```
+# 例えば
+docker exec -it ts_node sh 
+cd /var/www/html/
+npx ts-node src/lesson/compiler.ts 
+```
