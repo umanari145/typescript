@@ -1,3 +1,3 @@
-let hello:string = 'test-test';
+let test:string = 'test-test';
 
-console.log(hello.toLowerCase())
+console.log(test.toLowerCase())

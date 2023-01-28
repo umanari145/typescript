@@ -69,7 +69,11 @@ tsconfig.jsonをおけば一括の置換が可能
   // noImplicitReturns 関数戻り値の型注釈を必須
   // json使用時のオプション
   "moduleResolution": "node", 
-  "resolveJsonModule": true,  
+  "resolveJsonModule": true,
+  
+  "strictNullChecks":true 
+  // strictNullCheckがfalseの場合は例えばstring型でundefinedやnullを許容するが、trueの場合、エラーになる。厳密なチェックではtrueにした方が良い
+  // string型でいちいちnullチェックをすることを防げる。string型ではstring型のみを考えられる
 ```
 
 
