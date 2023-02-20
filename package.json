@@ -19,9 +19,11 @@
   "dependencies": {
     "browser-sync-webpack-plugin": "^2.3.0",
     "laravel-mix": "^6.0.49",
+    "superagent": "^8.0.9",
     "typescript": "^4.5.5"
   },
   "devDependencies": {
+    "@types/superagent": "^4.1.16",
     "ts-loader": "^9.4.1",
     "ts-node": "^10.9.1"
   }
