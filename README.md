@@ -112,6 +112,9 @@ http://localhost/health/
 - health
   - dist 成果物
   - src 
+    - Foods.ts 食べ物の抽象クラス
     - GoodFoods.ts 良い食べ物
-    - health.ts 悪い食べ物
+    - BadFooeds.ts 悪い食べ物
+    - Score.ts 得点計算
+    - health.ts 食べ物のエントリーポイント
   - index.html HTML  
