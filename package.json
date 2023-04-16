@@ -4,7 +4,9 @@
   "description": "typescrip - 静的型付けのJavaScript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "health": "./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.health.mix.js",
+    "health-watch": "./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.health.mix.js watch"
   },
   "repository": {
     "type": "git",

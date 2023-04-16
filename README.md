@@ -103,3 +103,15 @@ npx ts-node src/lesson/compiler.ts
 クローラー<br>
 https://qiita.com/Syoitu/items/6a136e3b8d2fb65e51a2<br>
 src/Scraping
+
+## 健康管理アプリ
+
+http://localhost/health/
+
+
+- health
+  - dist 成果物
+  - src 
+    - GoodFoods.ts 良い食べ物
+    - health.ts 悪い食べ物
+  - index.html HTML  
