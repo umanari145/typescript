@@ -3,3 +3,5 @@ const sayHello2 = (name: string) => {
   }
   //console.logとほぼ同じ、
   process.stdout.write(sayHello2('Ochiai Hiromitsu'));
+
+  
