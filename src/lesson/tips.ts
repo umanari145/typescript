@@ -154,7 +154,7 @@ input.value
 // nullの条件判定をしない分コストが下がる
 const input2 = document.getElementById('hogehoge')!;
 
-// インデックスシグネチャ
+// インデックスシグネチャ(動的プロパティ)
 interface Designer {
     name: string;
     [index: string]: string;
@@ -253,3 +253,8 @@ let car_instance = new AdvancedCar();
 
 //TypeScript 数字＋文字列→文字列
 // https://github.com/microsoft/TypeScript/blob/main/doc/spec-ARCHIVED.md#4.19.2
+
+// key of 演算子
+
+type KeyClass = keyof {name:string, age:number}
+

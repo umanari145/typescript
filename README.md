@@ -117,4 +117,26 @@ http://localhost/health/
     - BadFooeds.ts 悪い食べ物
     - Score.ts 得点計算
     - health.ts 食べ物のエントリーポイント
-  - index.html HTML  
+  - index.html HTML
+### DOMの方について
+
+HTMLElement<br>
+getElementByIdなどで取得できる一般的な型。addEventLinster/remove・・・などを付与できる
+HTML要素の親的な要素？
+https://tech.012grp.co.jp/entry/2021/01/19/145339
+
+```
+const a = document.querySelector('a')
+// => HTMLAnchorElement | null 型
+
+const div = document.querySelector('div')
+// => HTMLDivElement | null 型
+
+// 入力値系はこちらを使うのが良さそう
+const input = document.querySelector('input')
+// => HTMLInputElement | null型
+
+// allがあった場合
+const a = document.querySelectorAll('a')
+// => NodeListOf<HTMLAnchorElement>型
+```
