@@ -118,6 +118,20 @@ http://localhost/health/
     - Score.ts 得点計算
     - health.ts 食べ物のエントリーポイント
   - index.html HTML
+
+
+### htmlUtil
+
+http://localhost/htmlutil/
+
+
+- htmlutil
+  - dist 成果物
+  - src
+    - app.scss sassのcss
+    - index.ts Controller的処理
+    - HTMLRender.ts HTMLのレンダリング
+  - index.html HTML
 ### DOMの方について
 
 HTMLElement<br>
