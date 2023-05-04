@@ -23,11 +23,13 @@
         <div class="d-flex justify-content-between w-75">
             <h2>明細</h2>
         </div>
-        <button id="add_button">追加</button>
+        <div id="total-sum"></div>
+        <button id="add_detail_button">追加</button>
         <div id="multi-detail">
         </div>
     </div>
 
     <script type="text/javascript" src="./dist/multi-pulldown.js?hoge=<?php echo time(); ?>"></script>
+    <script type="text/javascript" src="./dist/calc-multi-detail.js?hoge=<?php echo time(); ?>"></script>
 </body>
 </html>

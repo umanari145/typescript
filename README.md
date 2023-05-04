@@ -129,8 +129,10 @@ http://localhost/htmlutil/
   - dist 成果物
   - src
     - app.scss sassのcss
-    - index.ts Controller的処理
-    - HTMLRender.ts HTMLのレンダリング
+    - multi-pulldown.ts 連動プルダウン
+    - PulldownRender.ts プルダウンHTMLのレンダリング
+    - calc-multi-detail.ts 明細の計算
+    - DetailRender.ts 明細HTMLのレンダリング
   - index.html HTML
 ### DOMの方について
 
