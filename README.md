@@ -132,6 +132,8 @@ http://localhost/htmlutil/
     - multi-pulldown.ts 連動プルダウン
     - PulldownRender.ts プルダウンHTMLのレンダリング
     - calc-multi-detail.ts 明細の計算
+    - DetailCollection.ts 明細のコレクション
+    - Detail.ts 明細のモデル
     - DetailRender.ts 明細HTMLのレンダリング
   - index.html HTML
 ### DOMの方について
@@ -151,6 +153,14 @@ const div = document.querySelector('div')
 // 入力値系はこちらを使うのが良さそう
 const input = document.querySelector('input')
 // => HTMLInputElement | null型
+
+// selectに関して
+const input = document.createElement('select')
+// => HTMLSelectElement | null型
+
+// optionに関して
+const input = document.createElement('option')
+// => HTMLOptionElement | null型
 
 // allがあった場合
 const a = document.querySelectorAll('a')

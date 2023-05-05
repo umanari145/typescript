@@ -15,7 +15,7 @@ export class DetailCollection {
     }
 
     add(detail: Detail) {
-        this.details.push(detail)
+        this.details?.push(detail)
         this.updateStorage()
     }
 
@@ -47,7 +47,7 @@ export class DetailCollection {
     }
     
     private getStoredTasks() {
-        const jsonString = this.storage.getItem(STORAGE_KEY)
+        const jsonString = this.storage?.getItem(STORAGE_KEY)
         if (jsonString) {
             const storedTasks = JSON.parse(jsonString)
             const details = storedTasks.map((detail:Detail) => new Detail(detail.id, detail.price))
