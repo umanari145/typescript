@@ -155,11 +155,11 @@ const input = document.querySelector('input')
 // => HTMLInputElement | null型
 
 // selectに関して
-const input = document.createElement('select')
+const input = document.querySelector('select')
 // => HTMLSelectElement | null型
 
 // optionに関して
-const input = document.createElement('option')
+const input = document.querySelector('option')
 // => HTMLOptionElement | null型
 
 // allがあった場合
