@@ -1,7 +1,7 @@
 
 import { PulldownRender } from "./PulldownRender"
 
-class Application {
+export class MultiPulldown {
     private readonly pulldownRender = new PulldownRender()
 
     public start = ():void => {
@@ -16,8 +16,3 @@ class Application {
     }
 }
 
-
-window.addEventListener('load', () => {
-    const app = new Application();
-    app.start()
-})

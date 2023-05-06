@@ -1,7 +1,7 @@
 
 import { DetailRender } from "./DetailRender"
 
-class Application2 {
+export class CalcMultiDetails {
     private readonly detailRender = new DetailRender()
 
     public start = ():void => {
@@ -15,9 +15,3 @@ class Application2 {
         document.getElementById('multi-detail')?.appendChild(detailEl)
     }
 }
-
-
-window.addEventListener('load', () => {
-    const app = new Application2();
-    app.start()
-})
