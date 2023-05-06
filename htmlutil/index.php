@@ -23,7 +23,17 @@
         <div class="d-flex justify-content-between w-75">
             <h2>明細</h2>
         </div>
-        <div id="total-sum"></div>
+        <div>
+            <div>
+                通常<span id="normal-total-sum"></div>
+            </div>
+            <div>
+                特別<span id="special-total-sum"></div>
+            </div>
+            <div>
+                例外<span id="irregular-total-sum"></div>
+            </div>
+        </div>
         <button id="add_detail_button">追加</button>
         <div id="multi-detail">
         </div>

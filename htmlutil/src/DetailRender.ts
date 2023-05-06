@@ -1,10 +1,9 @@
 import {v4 as uuid} from 'uuid';
-import { DetailTypeMap, DetailTypelabel, DetailType, Detail } from './Detail';
-import { DetailCollection } from './DetailCollection';
+import { DetailTypeMap, DetailTypelabel, DetailType, Detail, DetailCollection} from './Detail';
 
 export class DetailRender {
 
-    detailCollection = new DetailCollection();
+    private detailCollection = new DetailCollection()
 
     constructor() {
     }
@@ -12,14 +11,12 @@ export class DetailRender {
     public makeDetailEl = ():HTMLElement => {
         const detailEl: HTMLElement = document.createElement('div')
         detailEl.id = uuid()
-        
-        const detail = new Detail(detailEl.id)
-
-        this.detailCollection.add(detail)
+        detailEl.className = 'detail-line'
 
         const typeSelectEl: HTMLSelectElement = document.createElement('select')
         const typeOptionEl: HTMLOptionElement = document.createElement('option')
 
+        typeSelectEl.className = 'detail-type'
         typeOptionEl.value = ''
         typeOptionEl.text = ''
         typeSelectEl.appendChild(typeOptionEl)
@@ -27,15 +24,16 @@ export class DetailRender {
         typeSelectEl.appendChild(this.addOption(DetailTypeMap.SPECIAL))
         typeSelectEl.appendChild(this.addOption(DetailTypeMap.IRREGULAR))
 
-        /*typeSelectEl.addEventListener('change', () => {
-
-        })*/
+        typeSelectEl.addEventListener('change', () => this.calculateSummary())
 
         detailEl.appendChild(typeSelectEl)
 
         const priceEl: HTMLInputElement = document.createElement('input')
         priceEl.className = 'price text-lg-end'
-        priceEl.addEventListener('keydown', () => this.calculateSummary(detail.id, priceEl.value))
+        
+        priceEl.addEventListener('keydown', () => this.calculateSummary())
+        priceEl.addEventListener('keypress', () => this.calculateSummary())
+        priceEl.addEventListener('keyup', () => this.calculateSummary())
 
         detailEl.appendChild(priceEl)
 
@@ -45,25 +43,33 @@ export class DetailRender {
         const buttonEl: HTMLButtonElement = document.createElement('button')
         buttonEl.textContent = '削除'
         
-        buttonEl.addEventListener(
-            'click',
-            () => this.deletePulldown(detailEl.id)
-        )
+        buttonEl.addEventListener('click', () => this.deletePulldown(detailEl.id))
 
         detailEl.appendChild(buttonEl)
         
         return detailEl
     }
 
-    private calculateSummary = (detailId:string, price:string) => {
-        const detail = this.detailCollection.find(detailId)
-        if (price && !isNaN(parseInt(price))) {
-            if (detail) {
-                detail.price = parseInt(price)
-                this.detailCollection.update(detail)
+    private calculateSummary = () => {
+        const detail_lines = document.querySelectorAll<HTMLInputElement>('.detail-line')
+        this.detailCollection.clear()
+        detail_lines.forEach((ele: HTMLDivElement) => {
+            if (ele) {
+                const detailId = ele.id
+                const detailType = ele.querySelector<HTMLSelectElement>('.detail-type')?.value as DetailType | undefined
+                const price = ele.querySelector<HTMLInputElement>('.price')?.value
+               
+                this.detailCollection.add(
+                    new Detail(
+                        detailId,
+                        detailType,
+                        price
+                    )
+                )
+
+                this.detailCollection.summrize()
             }
-        }
-        document.getElementById('total-sum')!.innerHTML = String(this.detailCollection.sum())
+        })
     }
 
     private addOption = (detailType:DetailType):HTMLOptionElement => {
@@ -76,6 +82,7 @@ export class DetailRender {
     private deletePulldown = (locationId: string) => {
         if (window.confirm('削除しても構いませんか？')) {
             document.getElementById(locationId)?.remove()
+            this.calculateSummary()
         }
     }
 
