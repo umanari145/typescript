@@ -8,7 +8,9 @@
     "health": "./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.health.mix.js",
     "health-watch": "./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.health.mix.js watch",
     "huti": "./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.htmlutil.mix.js",
-    "huti-watch": "./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.htmlutil.mix.js watch"
+    "huti-watch": "./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.htmlutil.mix.js watch",
+    "hm": "./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.health-model.mix.js",
+    "hm-watch": "./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.health-model.mix.js watch"
   },
   "repository": {
     "type": "git",

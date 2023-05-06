@@ -136,6 +136,20 @@ http://localhost/htmlutil/
     - Detail.ts 明細のモデル
     - DetailRender.ts 明細HTMLのレンダリング
   - index.html HTML
+
+
+### 
+  - htmlutil
+    - dist 成果物
+    - src
+      - Food.ts 食品クラス(単純なイベント登録)値は保持しない
+      - Foodable.ts FoodのIF
+      - Foods.ts 主に計算系の責務
+      - Foodsable.ts FoodsのIF
+      - Score.ts Scoreのクラス
+      - Scoreable.ts ScoreのIF
+      - index.ts　エントリーポイント
+    - index.html HTML  
 ### DOMの方について
 
 HTMLElement<br>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+      body {
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  font-size: 1.3rem;
+  margin-top: 5rem;
+  padding-bottom: 5rem;
+  text-align: center;
+}
+.foods-container {
+  display: flex;
+  justify-content: center;
+}
+.foods {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+}
+.food {
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.2);
+  cursor: pointer;
+  display: flex;
+  font-size: 1.5rem;
+  margin: 0.5rem;
+  opacity: 0.7;
+  padding: 1rem;
+}
+.food:hover {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.26)
+}
+.food--active {
+  opacity: 1;
+}
+.food__name {
+  cursor: pointer;
+}
+.food__score {
+  cursor: pointer;
+  font-size: 2rem;
+  margin-left: 1rem;
+}
+.score {
+  display: flex;
+  justify-content: center;
+}
+.score__circle {
+  align-items: center;
+  border: 3px solid gray;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  opacity: 0.95;
+  width: 100px;
+}
+.score__number {
+  font-size: 3rem;
+}
+  </style>
+  <script src="dist/app.js" defer></script>
+</head>
+
+<body>
+  <div>
+    <h1>Daily Food Score </h1>
+    <br>
+    <div>
+      <h2>Today's Score</h2>
+      <div class="score">
+        <div class="score__circle">
+          <div class="score__number">0</div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div>
+      <h2>Good</h2>
+      <div class="foods-container">
+        <div class="foods">
+          <div class="food">
+            <div class="food__name">Green, leafy vegetables</div>
+            <div class="food__score">+5</div>
+          </div>
+          <div class="food">
+            <div class="food__name">All other vegetables</div>
+            <div class="food__score">+5</div>
+          </div>
+          <div class="food">
+            <div class="food__name">Nuts</div>
+            <div class="food__score">+2</div>
+          </div>
+          <div class="food">
+            <div class="food__name">Whole grains</div>
+            <div class="food__score">+1</div>
+          </div>
+          <div class="food">
+            <div class="food__name">Fish</div>
+            <div class="food__score">+4</div>
+          </div>
+          <div class="food">
+            <div class="food__name">Beans</div>
+            <div class="food__score">+3</div>
+          </div>
+          <div class="food">
+            <div class="food__name">Chicken</div>
+            <div class="food__score">+2</div>
+          </div>
+          <div class="food">
+            <div class="food__name">Wine (no more than one glass per day)</div>
+            <div class="food__score">+1</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div>
+      <h2>Bad</h2>
+      <div class="foods-container">
+        <div class="foods">
+          <div class="food">
+            <div class="food__name">Butter and margarine</div>
+            <div class="food__score">-3</div>
+          </div>
+          <div class="food">
+            <div class="food__name">Cheese</div>
+            <div class="food__score">-1</div>
+          </div>
+          <div class="food">
+            <div class="food__name">Red meat</div>
+            <div class="food__score">-3</div>
+          </div>
+          <div class="food">
+            <div class="food__name">Fried food</div>
+            <div class="food__score">-5</div>
+          </div>
+          <div class="food">
+            <div class="food__name">Sweets</div>
+            <div class="food__score">-5</div>
+          </div>
+          <div class="food">
+            <div class="food__name">Fast food</div>
+            <div class="food__score">-5</div>
+          </div>
+          <div class="food">
+            <div class="food__name">Eating out</div>
+            <div class="food__score">-3</div>
+          </div>
+          <div class="food">
+            <div class="food__name">Wine (more than one glass per day)</div>
+            <div class="food__score">-3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
