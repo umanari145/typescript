@@ -1,4 +1,5 @@
-import { DiscountType } from "./DiscountType"
+import { DiscountType, DiscountTypeMap } from "./DiscountType"
+import { Price } from "./Price"
 
 export class PriceRender {
     
@@ -38,8 +39,30 @@ export class PriceRender {
                     }
                 } 
             })
+            this.makePriceCalc(selected_discount_type_value)
     }
 
     private calcDiscount =  (e: Event):void => {
+        const discount_value_element = e.currentTarget as HTMLInputElement | null
+
+        const discount_type_element = discount_value_element?.parentElement?.querySelector('.discount_type') as HTMLInputElement | null
+        if (discount_type_element?.checked) {
+            const discount_type = discount_type_element.value as DiscountType
+            const discount_value = discount_value_element?.value
+            this.makePriceCalc(discount_type, discount_value)
+        }
+    }
+
+    private makePriceCalc = (discount_type:DiscountType, discount_value?: string):void => {
+            
+        const price = new Price(
+            document.getElementById('regular_price')!.innerHTML,
+            discount_type,
+            discount_value
+        )
+
+        const discounted_price = price.calcDiscountedPrice()
+        document.getElementById('discounted_price')!.innerHTML = discounted_price ? String(discounted_price) : ''
+
     }
 }

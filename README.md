@@ -135,11 +135,13 @@ http://localhost/htmlutil/
     - DetailCollection.ts 明細のコレクション
     - Detail.ts 明細のモデル
     - DetailRender.ts 明細HTMLのレンダリング
-  - index.html HTML
+    - Price.ts 金額系のオブジェクト
+    - PriceRender.ts 画面表示系の処理
+    - index.ts エントリーポイント
+  - index.php HTML
 
-
-### 
-  - htmlutil
+### 健康管理アプリ(モデル)
+  - health-model
     - dist 成果物
     - src
       - Food.ts 食品クラス(単純なイベント登録)値は保持しない
