@@ -47,17 +47,21 @@
         <div>
             <div>
                 <h3>価格</h3>
-                <span id="regular_price">10000</span>
-                <span id="discounted_price"></span>
+                <span>正規価格</span><span id="regular_price" class="ms-4">10000</span><span>円</span>
+                <div>
+                    <span>値引後金額</span><span id="discounted_price" class="ms-4"></span><span>円</span>
+                </div>
+
+                <div class="mt-3">値引き</div>
                 <div class="mt-2 discount_type_node">
                     <input type="radio" name="price_discount_type" id="discount_type_price_1" class="discount_type" value="1">
                     <label for="discount_type_price_1">金額</label>
-                    <input type="text" id="price_discount" class="text-lg-end col-1 discount_value"><span class="ms-1">円</span> 
+                    <input type="text" id="price_discount" class="text-lg-end col-1 discount_value" disabled=true><span class="ms-1">円引き</span>
                 </div>
                 <div class="mt-2 discount_type_node">
                     <input type="radio" name="price_discount_type" id="discount_type_rate_1" class="text-right discount_type" value="2">
                     <label for="discount_type_rate_1">割合</label>
-                    <input type="text" id="rate_discount" class="text-lg-end col-1 discount_value"><span class="ms-1">%</span>
+                    <input type="text" id="rate_discount" class="text-lg-end col-1 discount_value" disabled=true><span class="ms-1">%引き</span>
                 </div>
                 <div class="mt-2 discount_type_node">
                     <input type="radio" name="price_discount_type" id="discount_type_none_1" class="discount_type" value="3">

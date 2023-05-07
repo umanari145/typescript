@@ -1,18 +1,13 @@
 import { DiscountType, DiscountTypeMap } from "./DiscountType";
 
-
-type discountNumber = {
-    discountPrice: number
-    discountRarete: number
-}
 export class Price {
 
     private _regularPrice: number
     private _discountType: DiscountType
     private _discountValue: number|undefined
 
-    constructor(regular_price:string, discountType: DiscountType, discountValue?: string) {
-        this._regularPrice = Number(regular_price)
+    constructor(regular_price:number, discountType: DiscountType, discountValue?: string) {
+        this._regularPrice = regular_price
         this._discountType = discountType
         this._discountValue = (discountValue) ? Number(discountValue) : undefined
     }

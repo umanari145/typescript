@@ -39,7 +39,7 @@ export class PriceRender {
                     }
                 } 
             })
-            this.makePriceCalc(selected_discount_type_value)
+        this.makePriceCalc(selected_discount_type_value)
     }
 
     private calcDiscount =  (e: Event):void => {
@@ -49,14 +49,45 @@ export class PriceRender {
         if (discount_type_element?.checked) {
             const discount_type = discount_type_element.value as DiscountType
             const discount_value = discount_value_element?.value
-            this.makePriceCalc(discount_type, discount_value)
+            if (this.validValueCheck(discount_type, discount_value)) {
+                this.makePriceCalc(discount_type, discount_value)
+            }
         }
     }
 
+    private validValueCheck = (discount_type: DiscountType, discount_value?:string): boolean => {
+        if (!discount_value || isNaN(Number(discount_value))) {
+            return false
+        } 
+
+        const converted_number = Number(discount_value)
+
+        if (converted_number < 0) {
+            return false;
+        }
+
+        switch (discount_type) {
+            case DiscountTypeMap.RATE:
+                if (converted_number > 100) {
+                    return false
+                }
+                break;
+            case DiscountTypeMap.PRICE:
+                const regular_price = this.getRegularPrice()
+                if (converted_number > regular_price) {
+                    return false
+                }
+                break;
+        }
+        return true;
+    }
+
     private makePriceCalc = (discount_type:DiscountType, discount_value?: string):void => {
-            
+        
+        document.getElementById('discounted_price')!.innerHTML = ''
+
         const price = new Price(
-            document.getElementById('regular_price')!.innerHTML,
+            this.getRegularPrice(),
             discount_type,
             discount_value
         )
@@ -64,5 +95,9 @@ export class PriceRender {
         const discounted_price = price.calcDiscountedPrice()
         document.getElementById('discounted_price')!.innerHTML = discounted_price ? String(discounted_price) : ''
 
+    }
+
+    private getRegularPrice = ():number => {
+        return Number(document.getElementById('regular_price')!.innerHTML)
     }
 }

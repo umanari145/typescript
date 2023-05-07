@@ -109,6 +109,7 @@
     //"*.hogehoge",
     // 全てのディレクトリのtsに対して使わない
     "./health",
+    "./health-model",
     "./src"
   ],
 }
