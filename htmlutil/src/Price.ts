@@ -13,15 +13,19 @@ export class Price {
     }
 
     public calcDiscountedPrice = ():number|null => {
-        if (this._discountValue) {
-            switch (this._discountType) {
-                case DiscountTypeMap.PRICE:
+        switch (this._discountType) {
+            case DiscountTypeMap.PRICE:
+                if (this._discountValue) {
                     return this._regularPrice - this._discountValue
-                case DiscountTypeMap.RATE:
+                }
+                break;
+            case DiscountTypeMap.RATE:
+                if (this._discountValue) {
                     return this._regularPrice * (100 - this._discountValue) / 100
-                case DiscountTypeMap.NONE:
-                    return this._regularPrice
-            }
+                }
+                break;
+            case DiscountTypeMap.NONE:
+                return this._regularPrice
         }
         return null
     }
