@@ -1,3 +1,4 @@
 {
-    "/dist/app.js": "/dist/app.js"
+    "/htmlutil/dist/index.js": "/htmlutil/dist/index.js",
+    "/htmlutil/dist/app.css": "/htmlutil/dist/app.css"
 }

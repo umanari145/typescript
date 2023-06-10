@@ -7,9 +7,10 @@
     <title>HTMLUtil</title>
     <link rel="stylesheet" href="./dist/app.css?hoge=<?php echo time(); ?>">
 </head>
+
 <body>
     <h1>頻出動的処理</h2>
-    <div class="w-75">
+    <div class="w-75 mb-4">
         <div class="d-flex justify-content-between w-75">
             <h2>都道府県-市区町村</h2>
         </div>
@@ -19,7 +20,7 @@
     </div>
 
 
-    <div class="w-75">
+    <div class="w-75 mb-4">
         <div class="d-flex justify-content-between w-75">
             <h2>明細</h2>
         </div>
@@ -40,7 +41,7 @@
     </div>
 
 
-    <div class="w-75">
+    <div class="w-75 mb-4">
         <div class="d-flex justify-content-between w-75">
             <h2>セール品</h2>
         </div>
@@ -71,6 +72,33 @@
         </div>
     </div>
 
+    <div class="w-75 mb-4">
+        <div class="d-flex justify-content-between w-75">
+            <h2>モーダル選択</h2>
+        </div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            モーダルオープン
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">住みたいエリア</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+                    <button type="button" class="btn btn-primary">保存する</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script type="text/javascript" src="./dist/index.js?hoge=<?php echo time(); ?>"></script>
 </body>
 </html>
