@@ -1,6 +1,10 @@
 .modal {
-    li {
+    .pref_li {
         list-style-type: none;
         min-width: 100px;
+    }
+    .city_li {
+        list-style-type: none;
+        min-width: 170px;
     }
 }

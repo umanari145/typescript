@@ -1,12 +1,24 @@
 
-type ApiRes = {
+type PrefRes = {
+    message: string;
+    result: Pref[];
+}
+
+type CityRes = {
     message: string;
     result: City[];
 }
 
-type City = {
-    prefCode: string;
+type Pref = {
+    prefCode: number;
     prefName: string;
 }
 
-export {ApiRes, City}
+type City = {
+    prefCode: number,
+    cityCode: string,
+    cityName: string,
+    bigCityFlag: string
+}
+
+export {PrefRes, CityRes, Pref, City}

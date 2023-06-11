@@ -82,25 +82,26 @@
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">住みたいエリア</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div id="city_area">
-                        <ul id="city_list" class="d-flex justify-content-start flex-wrap">
+                    <div id="location_area">
+                        <ul id="pref_list" class="d-flex justify-content-start flex-wrap">
 
                         </ul>
-                        <ul id="town_list" class="d-flex justify-content-start flex-wrap">
+                        <ul id="city_list" class="d-flex justify-content-start flex-wrap">
 
                         </ul>
                     </div>                
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
-                    <button type="button" class="btn btn-primary">保存する</button>
+                    <button type="button" class="btn btn-secondary" id="close" data-bs-dismiss="modal">閉じる</button>
+                    <button type="button" class="btn btn-secondary d-none" id="back">戻る</button>
+                    <button type="button" class="btn btn-primary" id="search">検索する</button>
                 </div>
                 </div>
             </div>

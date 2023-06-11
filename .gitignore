@@ -3,3 +3,4 @@
 /health/dist
 /htmlutil/dist
 /health-model/dist
+/**/.env

@@ -129,11 +129,14 @@ http://localhost/htmlutil/
   - dist 成果物
   - src
     - app.scss sassのcss
+    - custom.scss カスタマイズ用のscss
+    - ApiRes.ts レスポンスの型
     - multi-pulldown.ts 連動プルダウン
     - PulldownRender.ts プルダウンHTMLのレンダリング
     - calc-multi-detail.ts 明細の計算
     - DetailCollection.ts 明細のコレクション
     - Detail.ts 明細のモデル
+    - CityGetters.ts 都道府県、市の取得処理
     - DetailRender.ts 明細HTMLのレンダリング
     - Price.ts 金額系のオブジェクト
     - PriceRender.ts 画面表示系の処理
