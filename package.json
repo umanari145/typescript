@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "health": "./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.health.mix.js",
     "health-watch": "./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.health.mix.js watch",
-    "huti": "./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.htmlutil.mix.js",
-    "huti-watch": "./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.htmlutil.mix.js watch",
+    "huti": "cross-env ENV_FILE=./htmlutil/src/.env  ./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.htmlutil.mix.js",
+    "huti-watch": "cross-env ENV_FILE=./htmlutil/src/.env  ./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.htmlutil.mix.js watch",
     "hm": "./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.health-model.mix.js",
     "hm-watch": "./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.health-model.mix.js watch"
   },
@@ -24,12 +24,15 @@
   "homepage": "https://github.com/umanari145/typescript#readme",
   "dependencies": {
     "@types/bootstrap": "^5.2.6",
-    "@types/dotenv": "^8.2.0",
     "@types/uuid": "^9.0.1",
+    "axios": "^1.4.0",
     "bootstrap": "^5.3.0",
     "browser-sync-webpack-plugin": "^2.3.0",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.1.4",
+    "dotenv-expand": "^10.0.0",
     "laravel-mix": "^6.0.49",
+    "mix-env-file": "^0.1.1",
     "superagent": "^8.0.9",
     "typescript": "^4.5.5",
     "uuid": "^9.0.0"

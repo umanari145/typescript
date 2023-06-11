@@ -85,6 +85,4 @@ export class DetailRender {
             this.calculateSummary()
         }
     }
-
-
 }
