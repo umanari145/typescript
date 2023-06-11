@@ -1,37 +1,79 @@
-import axios, { AxiosError, AxiosResponse } from "axios"
+import {AxiosError, AxiosResponse } from "axios"
 import {v4 as uuid} from 'uuid';
 import {PrefRes, CityRes, Pref, City} from './ApiRes'
-
+import {LocationGetters} from './LocationGetters'
 export class LocationRender {
-    
-    private api_key: string
-    private api_url: string
 
-    constructor() {
-        this.api_key = process.env.MIX_API_KEY || ''
-        this.api_url = process.env.MIX_API_URL || ''
+    private locationGetters = new LocationGetters();
+
+    public start = ()=> {
+        this.createPref()
+        this.createCity()
     }
 
-    
-    public fetchPrefs = () => {
-        axios({
-            url: `${this.api_url}prefectures`,
-            method: "GET",
-            headers: {
-                'X-API-KEY': this.api_key
-            }
-        }).then((res:AxiosResponse<PrefRes> )=> {
-            const { data, status } = res;
-            if (status === 200) {
-                const pref_list:HTMLElement|null = document.getElementById('pref_list')
-                data.result.forEach((pref:Pref) => {
-                    pref_list?.appendChild(this.createPrefHTML(pref))
-                })
-            }
+    private createPref = () => {
 
-        }).catch((e: AxiosError<{ error: string }>) => {
-            // エラー処理
-            console.log(e.message);
+        this.locationGetters
+            .fetchPrefs()
+            .then((res:AxiosResponse<PrefRes> )=> {
+                const { data, status } = res;
+                if (status === 200) {
+                    const pref_list:HTMLElement|null = document.getElementById('pref_list')
+                    data.result.forEach((pref:Pref) => {
+                        pref_list?.appendChild(this.createPrefHTML(pref))
+                    })
+                }
+    
+            }).catch((e: AxiosError<{ error: string }>) => {
+                // エラー処理
+                console.log(e.message);
+            })
+    }
+
+    private createCity = () => {
+        
+        document.getElementById('search')?.addEventListener('click', ()=> {
+            const checked_pref: HTMLInputElement|null = document.querySelector('#pref_list input:checked')
+            if (checked_pref?.value) {
+                this.changeToCityMode()
+                
+                this.locationGetters
+                    .fetchCities(checked_pref?.value)
+                    .then((res:AxiosResponse<CityRes>)=> {
+                        const { data, status } = res;
+                        if (status === 200) {
+                            // nullじゃないことをかくていしないとinertHTMLに入る
+                            const city_list = document.getElementById('city_list')!
+                            city_list.innerHTML = '';
+            
+                            data.result.forEach((city:City) => {
+                                const cityElement = this.createCityHTML(city)
+                                city_list.appendChild(cityElement)
+                            })
+                        }
+            
+                    }).catch((e: AxiosError<{ error: string }>) => {
+                        // エラー処理
+                        console.log(e.message);
+                    })
+            }
+        })
+        this.changeToBackPrefMode()
+    }
+
+    private changeToCityMode = () => {
+        document.getElementById('city_list')!.classList.remove('d-none')
+        document.getElementById('pref_list')!.classList.add('d-none')
+        document.getElementById('close')!.classList.add('d-none')
+        document.getElementById('back')!.classList.remove('d-none')
+    }
+    
+    private changeToBackPrefMode = () => {
+        document.getElementById('back')?.addEventListener('click', ()=> {
+            document.getElementById('city_list')!.classList.add('d-none')
+            document.getElementById('back')!.classList.add('d-none')
+            document.getElementById('pref_list')!.classList.remove('d-none')
+            document.getElementById('close')!.classList.remove('d-none')
         })
     }
 
@@ -56,33 +98,6 @@ export class LocationRender {
         prefEl.appendChild(typeLabelEl)
 
         return prefEl
-    }
-
-    public fetchCities = (city_code:string) => {
-
-        axios({
-            url: `${this.api_url}cities?prefCode=${city_code}`,
-            method: "GET",
-            headers: {
-                'X-API-KEY': this.api_key
-            }
-        }).then((res:AxiosResponse<CityRes> )=> {
-            const { data, status } = res;
-            if (status === 200) {
-                // nullじゃないことをかくていしないとinertHTMLに入る
-                const city_list = document.getElementById('city_list')!
-                city_list.innerHTML = '';
-
-                data.result.forEach((city:City) => {
-                    const cityElement = this.createCityHTML(city)
-                    city_list.appendChild(cityElement)
-                })
-            }
-
-        }).catch((e: AxiosError<{ error: string }>) => {
-            // エラー処理
-            console.log(e.message);
-        })
     }
 
     private createCityHTML = (city:City):HTMLElement => {
