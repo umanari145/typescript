@@ -155,7 +155,19 @@ http://localhost/htmlutil/
       - Score.ts Scoreのクラス
       - Scoreable.ts ScoreのIF
       - index.ts　エントリーポイント
-    - index.html HTML  
+    - index.html HTML
+
+
+### consoleApp
+  - console-app
+    - dist
+    - src
+      - index.ts
+
+tsのままデバッグ可能
+```
+node console-app/src/index.ts 
+```      
 ### DOMの方について
 
 HTMLElement<br>

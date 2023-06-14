@@ -10,7 +10,9 @@
     "huti": "cross-env ENV_FILE=./htmlutil/src/.env  ./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.htmlutil.mix.js",
     "huti-watch": "cross-env ENV_FILE=./htmlutil/src/.env  ./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.htmlutil.mix.js watch",
     "hm": "./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.health-model.mix.js",
-    "hm-watch": "./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.health-model.mix.js watch"
+    "hm-watch": "./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.health-model.mix.js watch",
+    "ca": "./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.console-app.mix.js",
+    "ca-watch": "./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.console-app.mix.js watch"
   },
   "repository": {
     "type": "git",
@@ -38,6 +40,7 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "@types/node": "^20.3.0",
     "@types/superagent": "^4.1.16",
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.62.1",
