@@ -164,10 +164,14 @@ http://localhost/htmlutil/
     - src
       - index.ts
 
-tsのままデバッグ可能
 ```
-node console-app/src/index.ts 
-```      
+コマンドラインのものは
+laravel-mixでコンパイルするとエラーになる
+(node:956) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'write' of undefined
+    at printLine (/var/www/html/console-app/dist/index.js:135:18)
+    at /var/www/html/console-app/dist/index.js:140:7
+    
+```
 ### DOMの方について
 
 HTMLElement<br>
