@@ -165,8 +165,10 @@ http://localhost/htmlutil/
       - index.ts
 
 ```
+生tscコマンドで実装
+
 コマンドラインのものは
-laravel-mixでコンパイルするとエラーになる
+laravel-mixでコンパイルするとなぜかエラーになる(コンパイラの質？)
 (node:956) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'write' of undefined
     at printLine (/var/www/html/console-app/dist/index.js:135:18)
     at /var/www/html/console-app/dist/index.js:140:7
