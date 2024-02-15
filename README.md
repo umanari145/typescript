@@ -218,4 +218,7 @@ const a = document.querySelectorAll('a')
 
 ## async_await_promise
 
-http://localhost/health/
+http://localhost/async_await_promise/
+
+- src
+  - asynchronous.ts 非同期処理

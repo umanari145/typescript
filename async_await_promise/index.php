@@ -6,6 +6,6 @@
   </head>
   <body>
     <p id="message"></p>
-    <script src="./dist/async_await.js"></script>
+    <script src="./dist/asynchronous.js"></script>
   </body>
 </html>
