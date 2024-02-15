@@ -1,3 +1,3 @@
-const mix = require('laravel-mix');
+const mix = require("laravel-mix");
 
-mix.ts('src/Scraping.ts', 'src/Scraping.js');
+mix.ts("async_await_promise/src/*", "async_await_promise/dist/");

@@ -1,7 +1,4 @@
 /node_modules/
 /dist/
-/health/dist
-/htmlutil/dist
-/health-model/dist
-/console-app/dist
+/**/dist/
 /**/.env
