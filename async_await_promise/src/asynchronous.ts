@@ -1,12 +1,12 @@
 
-class Asynchronous {
+export class Asynchronous {
   private url: string
 
   constructor() {
     this.url = "./src/hello.json";
   }
 
-  public fetch_hello_fullfill = ():Promise<void> => {
+  private fetch_hello_fullfill = ():Promise<void> => {
     const promise = fetch(this.url);
 
     const onFulfilled = (data: any) => {
@@ -19,7 +19,7 @@ class Asynchronous {
     return promise.then(onFulfilled, onRejected);
   }
 
-  public fetch_hello_1step = ():Promise<void> => {
+  private fetch_hello_1step = ():Promise<void> => {
     return fetch(this.url).then(
       (data) => {
         console.log("fetch 1stepのthen通信成功しました 1段階");
@@ -30,7 +30,7 @@ class Asynchronous {
     );
   }
 
-  public fetch_hello_2step = ():Promise<string|void> => {
+  private fetch_hello_2step = ():Promise<string|void> => {
     return fetch(this.url)
     .then((response:Response) => {
       if (!response.ok) {
@@ -46,12 +46,12 @@ class Asynchronous {
     });
   }
 
-  public fetch_hello_2step_return = ():Promise<Response> => {
+  private fetch_hello_2step_return = ():Promise<Response> => {
     return fetch(this.url);
   }
 
   // asyncなのでpromiseをかえすがvoid
-  public try_async_await = async():Promise<void> => {
+  private try_async_await = async():Promise<void> => {
     try {
       const response = await fetch(this.url);
       // ↓ここでもawaitを使わないとconsole.log(data)でPromiseが返却されてしまう
@@ -64,51 +64,50 @@ class Asynchronous {
     }
   }
 
-  public return_async_await = async ():Promise<Response> => {
+  private return_async_await = async ():Promise<Response> => {
     const response = await fetch("./src/hello.json");
     return response.json();
-  }  
+  } 
+
+  public start = async() => {
+    console.log('fetch_hello_1stepの開始');
+    await this.fetch_hello_1step();
+    console.log('----------------------');
+  
+    console.log('fetch_hello_2stepの開始');
+    await this.fetch_hello_2step();
+    console.log('----------------------');
+  
+    console.log('fetch_hello_2step_returnの開始');
+    await this.fetch_hello_2step_return()
+      .then((res:Response) => res.json())
+      .then((data) => console.log(data))
+    console.log('----------------------');
+  
+    console.log('fetch_hello_2step_returnで変数を受け取る、の開始');
+    const data = await this.fetch_hello_2step_return()
+      .then((res:Response) => res.json());
+    console.log(data)
+    console.log('----------------------');
+  
+    console.log('try_async_awaitの開始');
+    await this.try_async_await();
+    console.log('----------------------');
+  
+    console.log('try_async_awaitの開始 戻り値としてPromise<void>なので1thenが可能');
+    await this.try_async_await()
+    // だだしなにも帰ってこないのでundefined
+      .then((res:void) => console.log(res) );
+    console.log('----------------------');
+  
+    console.log('return async_awaitの開始 then');
+    await this.return_async_await()
+      .then((res:Response) => console.log(res));
+    console.log('----------------------');
+  
+    console.log('return async_awaitの開始 戻り値');
+    const data2 = await this.return_async_await();
+    console.log(data2);
+    console.log('----------------------');
+  }
 }
-
-(async() => {
-  const asynchronosu = new Asynchronous();
-  console.log('fetch_hello_1stepの開始');
-  await asynchronosu.fetch_hello_1step();
-  console.log('----------------------');
-
-  console.log('fetch_hello_2stepの開始');
-  await asynchronosu.fetch_hello_2step();
-  console.log('----------------------');
-
-  console.log('fetch_hello_2step_returnの開始');
-  await asynchronosu.fetch_hello_2step_return()
-    .then((res:Response) => res.json())
-    .then((data) => console.log(data))
-  console.log('----------------------');
-
-  console.log('fetch_hello_2step_returnで変数を受け取る、の開始');
-  const data = await asynchronosu.fetch_hello_2step_return()
-    .then((res:Response) => res.json());
-  console.log(data)
-  console.log('----------------------');
-
-  console.log('try_async_awaitの開始');
-  await asynchronosu.try_async_await();
-  console.log('----------------------');
-
-  console.log('try_async_awaitの開始 戻り値としてPromise<void>なので1thenが可能');
-  await asynchronosu.try_async_await()
-  // だだしなにも帰ってこないのでundefined
-    .then((res) => console.log(res) );
-  console.log('----------------------');
-
-  console.log('return async_awaitの開始 then');
-  await asynchronosu.return_async_await()
-    .then((res) => console.log(res));
-  console.log('----------------------');
-
-  console.log('return async_awaitの開始 戻り値');
-  const data2 = await asynchronosu.return_async_await();
-  console.log(data2);
-  console.log('----------------------');
-})();

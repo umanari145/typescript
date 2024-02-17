@@ -11,6 +11,8 @@
     "huti-watch": "cross-env ENV_FILE=./htmlutil/src/.env  ./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.htmlutil.mix.js watch",
     "hm": "./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.health-model.mix.js",
     "hm-watch": "./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.health-model.mix.js watch",
+    "async": "./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.async.mix.js",
+    "async-watch": "./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.async.mix.js watch",
     "ca": "npx tsc",
     "ca-watch": "npx tsc -w"
   },
@@ -37,7 +39,8 @@
     "mix-env-file": "^0.1.1",
     "node-fetch": "^3.3.2",
     "typescript": "^4.5.5",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "vue": "^3.4.19"
   },
   "devDependencies": {
     "@types/node": "^20.3.1",
