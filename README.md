@@ -224,6 +224,8 @@ http://localhost/async_await_promise/
 
 - src
   - asynchronous.ts 非同期処理(promise と async_await について)
+  - vuemini.ts Vue の読み方
+  - main.ts 読み込み
   - index.php (エントリーポイント 実際はブラウザの console で内容がみれる)
   - city.php 都道府県と区、市を返す API
   - hobbies.php 趣味を返す API
