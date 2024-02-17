@@ -50,9 +50,11 @@ class Asynchronous {
     return fetch(this.url);
   }
 
+  // asyncなのでpromiseをかえすがvoid
   public try_async_await = async():Promise<void> => {
     try {
       const response = await fetch(this.url);
+      // ↓ここでもawaitを使わないとconsole.log(data)でPromiseが返却されてしまう
       const data = await response.json();
       console.log(data);
     } catch (err:any) {
@@ -90,8 +92,14 @@ class Asynchronous {
   console.log(data)
   console.log('----------------------');
 
-  console.log('async_awaitの開始');
+  console.log('try_async_awaitの開始');
   await asynchronosu.try_async_await();
+  console.log('----------------------');
+
+  console.log('try_async_awaitの開始 戻り値としてPromise<void>なので1thenが可能');
+  await asynchronosu.try_async_await()
+  // だだしなにも帰ってこないのでundefined
+    .then((res) => console.log(res) );
   console.log('----------------------');
 
   console.log('return async_awaitの開始 then');

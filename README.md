@@ -221,4 +221,4 @@ const a = document.querySelectorAll('a')
 http://localhost/async_await_promise/
 
 - src
-  - asynchronous.ts 非同期処理
+  - asynchronous.ts 非同期処理(promise と async_await について)
