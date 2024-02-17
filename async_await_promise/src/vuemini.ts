@@ -9,7 +9,12 @@ type City = {
 
 type Town = {
     // 1a:千葉市、1b:船橋市など・・・
-    [key: number]: string;
+    [key: string]: string;
+}
+
+type Hobby = {
+    // a:野球、b:サッカーなど・・・
+    [key: string]: string;
 }
 
 export const App = {
@@ -21,13 +26,22 @@ export const App = {
         const selected_town = ref(undefined);
 
         onMounted(async () => {
+            const pref_url:string = 'http://localhost/async_await_promise/city.php?type=city';
+            const hobbies_url:string = 'http://localhost/async_await_promise/hobbies.php';
+
             try {
-                const pref_url:string = 'http://localhost/async_await_promise/city.php?type=city';
-                const res:AxiosResponse<City> = await axios.get(pref_url)
-                const { data, status } = res;
-                if (status === 200) {
-                    cities.value = data;
-                }
+                // const res:AxiosResponse<City> = await axios.get(pref_url);
+
+                // 両方取得確認
+                const res = await Promise.all([
+                    axios.get(pref_url),
+                    axios.get(hobbies_url)
+                ])
+
+                const {data} =res[0];
+                // const {data1} =res[1];
+                cities.value = data;
+
             } catch(e) {
                 console.log(e);
             }

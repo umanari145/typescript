@@ -226,3 +226,4 @@ http://localhost/async_await_promise/
   - asynchronous.ts 非同期処理(promise と async_await について)
   - index.php (エントリーポイント 実際はブラウザの console で内容がみれる)
   - city.php 都道府県と区、市を返す API
+  - hobbies.php 趣味を返す API
