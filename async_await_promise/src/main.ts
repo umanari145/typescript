@@ -11,5 +11,5 @@ const app = createApp(App);
 app.mount('#app')
 
 const calc = new Calc();
-calc.start();
+//calc.start();
 calc.start2();

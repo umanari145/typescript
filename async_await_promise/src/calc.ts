@@ -2,9 +2,11 @@
 export class Calc {
 
   private calcadd = (add_number:number) => {
+    console.log('add_number ' + add_number);
     const url:string = `http://localhost/async_await_promise/calc.php?add=${add_number}`;
     return fetch(url)
     .then((response:Response) => {
+      console.log('after ' + add_number);
       if (!response.ok) {
         throw new Error('例外を投げる');
       }
@@ -30,6 +32,7 @@ export class Calc {
     const start = performance.now();
     const PromiseArr = [];
     for (let i =1; i < 10; i++) {
+      // awaitがない分関数の実行自体 console.log(add_number・・・)は先行して出力される
       const res = this.calcadd(10 * i);
       PromiseArr.push(res)
     }
