@@ -1,7 +1,6 @@
 import pino, { LoggerOptions } from 'pino';
 import pretty from 'pino-pretty';
 
-/*
 // Pinoのカスタム設定を定義
 const _options: LoggerOptions = {
   transport: {
@@ -18,14 +17,14 @@ const prettyOptions = {
     const err_msg = log.error ? `エラー:${log.error}` : '';
     return `${para_msg} ${err_msg} ${log.msg}`;
   },
-};*/
+};
 
 // pino-prettyの設定を適用するためには、pinoのtransportオプションに直接含めます。
 const logger = pino({
-  //..._options,
+  ..._options,
   transport: {
     target: 'pino-pretty',
-  //  options: prettyOptions,
+    options: prettyOptions,
   },
 });
 
