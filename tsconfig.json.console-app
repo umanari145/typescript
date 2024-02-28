@@ -108,6 +108,7 @@
     // ワイルドカード
     //"*.hogehoge",
     // 全てのディレクトリのtsに対して使わない
+    "./async_await_promise",    
     "./health",
     "./health-model",
     "./htmlutil",

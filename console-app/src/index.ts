@@ -1,4 +1,4 @@
-
+/*
 const printLine = (text: string, breakLine: boolean = true) => {
     process.stdout.write(text + (breakLine ? '\n' : ''))
 }
@@ -22,4 +22,4 @@ const readLine = async () => {
     const age = await promptInput('年齢を入力してください。')
     console.log(age)
     process.exit(0)
-})()
+})()*/
