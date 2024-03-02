@@ -27,6 +27,6 @@
             </span>
         </div>
     </div>
-    <script src="./dist/main.js"></script>
+    <script src="./dist/main.js?key=<?php echo time();?>"></script>
   </body>
 </html>

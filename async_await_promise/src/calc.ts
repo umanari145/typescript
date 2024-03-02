@@ -46,6 +46,25 @@ export class Calc {
       console.log('10回分 promiseのend 非同期' +  (end - start ) / 1000 + '秒');  
     })
   }
+
+  public start3 = async() => {
+    console.log('foreachのawait 非同期');
+    const start = performance.now();
+    const number_arr = [];
+    for (let i =1; i < 10; i++) {
+      number_arr.push(i);
+    }
+
+    // 非同期的にforeachがはかれる start1との比較に注意
+    number_arr.forEach(async (i:number) => {
+      const res = await this.calcadd(10 * i);
+    })
+
+    const end = performance.now();
+    // ここでは10回分終わってない
+    console.log('10回分　foreachのend await ' +  (end - start ) / 1000 + '秒');
+   
+  }
 }
 
 
