@@ -246,3 +246,14 @@ https://github.com/users/umanari145/packages/npm/package/fm-common-utils
 ```
 npm install @umanari145/fm-common-utils@バージョン名
 ```
+
+3.実際のファイルの読み込み
+
+```
+async_await_promise/src/main.ts
+
+import { add } from '@umanari145/fm-common-utils';
+
+・・・・・・・・・・・
+console.log(add(3,4));
+```
