@@ -229,3 +229,20 @@ http://localhost/async_await_promise/
   - index.php (エントリーポイント 実際はブラウザの console で内容がみれる)
   - city.php 都道府県と区、市を返す API
   - hobbies.php 趣味を返す API
+
+# プライベートリポジトリの読み込み
+
+https://github.com/users/umanari145/packages/npm/package/fm-common-utils
+
+1 .npmrc の作成(認証ファイルの作成)
+
+```
+@umanari145:registry=https://npm.pkg.github.com/
+//npm.pkg.github.com/:_authToken=xxxxxxxx
+```
+
+2. ライブラリのインストール
+
+```
+npm install @umanari145/fm-common-utils@バージョン名
+```
