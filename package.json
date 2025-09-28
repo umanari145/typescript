@@ -16,7 +16,8 @@
     "console-app": "./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.console-app.mix.js",
     "console-app-watch": "./node_modules/laravel-mix/bin/cli.js  --mix-config=webpack.console-app.mix.js watch",
     "ca": "npx tsc",
-    "ca-watch": "npx tsc -w"
+    "ca-watch": "npx tsc -w",
+    "vite": "cd vitesample && npm run dev"
   },
   "repository": {
     "type": "git",
