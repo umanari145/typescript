@@ -1,5 +1,5 @@
 import {v4 as uuid} from 'uuid';
-import { DetailTypeMap, DetailTypelabel, DetailType, Detail, DetailCollection} from './Detail';
+import { DetailTypeMap, DetailTypelabel, type DetailType, Detail, DetailCollection} from './Detail';
 
 export class DetailRender {
 
@@ -30,14 +30,14 @@ export class DetailRender {
 
         const priceEl: HTMLInputElement = document.createElement('input')
         priceEl.className = 'price text-lg-end'
-        
+        priceEl.placeholder = '1000'
         priceEl.addEventListener('keydown', () => this.calculateSummary())
         priceEl.addEventListener('keypress', () => this.calculateSummary())
         priceEl.addEventListener('keyup', () => this.calculateSummary())
-
         detailEl.appendChild(priceEl)
 
         const noteEl: HTMLInputElement = document.createElement('input')
+        noteEl.placeholder = '備考'
         detailEl.appendChild(noteEl)
 
         const buttonEl: HTMLButtonElement = document.createElement('button')

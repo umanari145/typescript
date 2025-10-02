@@ -1,4 +1,4 @@
-import axios, { AxiosPromise } from "axios"
+import axios from "axios"
 
 export class LocationGetters {
     
@@ -6,11 +6,11 @@ export class LocationGetters {
     private api_url: string
 
     constructor() {
-        this.api_key = process.env.MIX_API_KEY || ''
-        this.api_url = process.env.MIX_API_URL || ''
+        this.api_key = ''
+        this.api_url = ''
     }
 
-    public fetchPrefs = ():AxiosPromise => {
+    public fetchPrefs = () => {
         return axios({
             url: `${this.api_url}prefectures`,
             method: "GET",
@@ -20,7 +20,7 @@ export class LocationGetters {
         })
     }
 
-    public fetchCities = (city_code:string): AxiosPromise => {
+    public fetchCities = (city_code:string) => {
         return axios({
             url: `${this.api_url}cities?prefCode=${city_code}`,
             method: "GET",

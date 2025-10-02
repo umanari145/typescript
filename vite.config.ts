@@ -1,7 +1,9 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  root: 'vitesample',
+  // ここをスイッチすればOK
+  //root: 'vitesample',
+  root: 'htmlutil',
   base: '/',
   publicDir: 'public',
   build: {

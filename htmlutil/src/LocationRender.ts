@@ -1,6 +1,6 @@
-import {AxiosError, AxiosResponse } from "axios"
+import {AxiosError} from "axios"
 import {v4 as uuid} from 'uuid';
-import {PrefRes, CityRes, Pref, City} from './ApiRes'
+import {type Pref, type City} from './ApiRes'
 import {LocationGetters} from './LocationGetters'
 export class LocationRender {
 
@@ -15,7 +15,7 @@ export class LocationRender {
 
         this.locationGetters
             .fetchPrefs()
-            .then((res:AxiosResponse<PrefRes> )=> {
+            .then((res)=> {
                 const { data, status } = res;
                 if (status === 200) {
                     const pref_list:HTMLElement|null = document.getElementById('pref_list')
@@ -39,7 +39,7 @@ export class LocationRender {
                 
                 this.locationGetters
                     .fetchCities(checked_pref?.value)
-                    .then((res:AxiosResponse<CityRes>)=> {
+                    .then((res)=> {
                         const { data, status } = res;
                         if (status === 200) {
                             // nullじゃないことをかくていしないとinertHTMLに入る

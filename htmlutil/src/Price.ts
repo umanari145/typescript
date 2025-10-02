@@ -1,4 +1,4 @@
-import { DiscountType, DiscountTypeMap } from "./DiscountType";
+import { type DiscountType,  DiscountTypeMap } from "./DiscountType";
 
 export class Price {
 
