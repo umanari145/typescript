@@ -1,4 +1,4 @@
-import { Foodsable } from "./Foodsable";
+import { type Foodsable } from "./Foodsable";
 import { Food } from "./Food";
 
 export class Foods implements Foodsable {

@@ -1,5 +1,5 @@
-import {Scoreable} from './Scoreable'
-import { Foods } from './Foods';
+import {type Scoreable} from './Scoreable'
+import {Foods} from './Foods';
 
 export class Score implements Scoreable {
     private static instance: Score;

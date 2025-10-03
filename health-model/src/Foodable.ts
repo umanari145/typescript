@@ -1,4 +1,4 @@
-export interface Foodable {
+export type Foodable = {
     element: HTMLDivElement;
     clickEventHandler(e:Event): void;
 }

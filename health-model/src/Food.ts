@@ -1,4 +1,4 @@
-import { Foodable } from "./Foodable";
+import { type Foodable } from "./Foodable";
 import { Score } from "./Score";
 
 export class Food implements Foodable {
