@@ -2,7 +2,9 @@
 
 // ヘッダーを設定して、レスポンスのContent-TypeがJSONであることを指定
 header('Content-Type: application/json; charset=utf-8');
-
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type');
 
 $response = [];
 http_response_code(200);

@@ -12,7 +12,7 @@ const app = createApp(App);
 app.mount('#app')
 
 const calc = new Calc();
-// calc.start();
-// calc.start2();
+calc.start();
+calc.start2();
 calc.start3();
 console.log(add(3,4));

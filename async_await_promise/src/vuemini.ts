@@ -1,5 +1,5 @@
 
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
 import { ref, onMounted } from 'vue';
 
 type City = {
@@ -50,7 +50,7 @@ export const App = {
         const changePref = async()=> {
             try {
                 const town_url:string = `http://localhost/async_await_promise/city.php?type=town&pref_code=${selected_pref.value}`;
-                const res:AxiosResponse<Town> = await axios.get(town_url)
+                const res: { data: Town; status: number; } = await axios.get(town_url)
                 const { data, status } = res;
                 if (status === 200) {
                     towns.value = data;

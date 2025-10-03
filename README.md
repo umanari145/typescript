@@ -120,7 +120,7 @@ src/Scraping
 
 ## 健康管理アプリ
 
-http://localhost/health/
+http://localhost:5173
 
 - health
   - dist 成果物
@@ -261,7 +261,7 @@ console.log(add(3,4));
 
 ## viteインストール
 軽量&高速ビルドツール
-(複雑な設定のモジュールバンドラーのアンチパターン)
+(複雑な設定のモジュールバンドラーのアンチパターン?)
 
 ```
 # グローバル
@@ -273,6 +273,7 @@ npm install -g vite
 # (.)カレントディレクトリに作る
 npm create vite@latest . -- --template vanilla-ts
 ```
+
 
 
 ## vite参考
