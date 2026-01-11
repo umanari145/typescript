@@ -230,7 +230,7 @@ http://localhost/async_await_promise/
   - city.php 都道府県と区、市を返す API
   - hobbies.php 趣味を返す API
 
-# プライベートリポジトリの読み込み
+## プライベートリポジトリの読み込み
 
 https://github.com/users/umanari145/packages/npm/package/fm-common-utils
 
@@ -258,8 +258,8 @@ import { add } from '@umanari145/fm-common-utils';
 console.log(add(3,4));
 ```
 
+## vite インストール
 
-## viteインストール
 軽量&高速ビルドツール
 (複雑な設定のモジュールバンドラーのアンチパターン?)
 
@@ -268,15 +268,104 @@ console.log(add(3,4));
 npm install -g vite
 ```
 
-## viteテンプレート作成
+## vite テンプレート作成
+
 ```
 # (.)カレントディレクトリに作る
 npm create vite@latest . -- --template vanilla-ts
 ```
 
+## vite 参考
 
-
-## vite参考
 https://qiita.com/miruon/items/58b9cc4dbabc3f945ede<br>
 https://zenn.dev/zakimaz/articles/94f5b67fc7b585<br>
 https://dtnavi.tcdigital.jp/dev_blog/devtool/vite-react-typescript-%E7%92%B0%E5%A2%83%E3%82%92-docker-%E3%81%A7%E6%A7%8B%E7%AF%89%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/
+
+## 今更ながら cursor の setting.json について
+
+setting.json
+
+```json
+{
+  "phpcs.standard": "PSR12",
+  "phpcs.executablePath": "/Users/matsumotonorio/.composer/vendor/squizlabs/php_codesniffer/bin/phpcs",
+  "php.validate.executablePath": "",
+  "phpcs.showSources": true,
+  "workbench.editorAssociations": {
+    "*.html": "default"
+  },
+  "go.autocompleteUnimportedPackages": true,
+  "go.gopath": "",
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "eslint.enable": true,
+  "eslint.nodePath": "/Users/matsumotonorio/.nodebrew/current/bin/eslint",
+  "editor.tokenColorCustomizations": {},
+  "editor.formatOnSave": true,
+  "editor.semanticTokenColorCustomizations": {},
+  "eslint.rules.customizations": [],
+  "eslint.nodeEnv": "",
+  "editor.largeFileOptimizations": false,
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true,
+  "eslint.options": {},
+  "editor.codeActionsOnSave": {
+    "source.removeUnused.ts": "explicit",
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "yaml.customTags": [
+    "!And",
+    "!And sequence",
+    "!If",
+    "!If sequence",
+    "!Not",
+    "!Not sequence",
+    "!Equals",
+    "!Equals sequence",
+    "!Or",
+    "!Or sequence",
+    "!FindInMap sequence",
+    "!Base64",
+    "!Base64 mapping",
+    "!Cidr",
+    "!Cidr sequence",
+    "!Ref",
+    "!Sub",
+    "!GetAtt",
+    "!GetAZs",
+    "!ImportValue",
+    "!Select",
+    "!Select sequence",
+    "!Split",
+    "!Split sequence",
+    "!Join sequence"
+  ],
+  "prettier.useEditorConfig": false,
+  "workbench.activityBar.orientation": "vertical",
+  "eslint.codeActionsOnSave.rules": null,
+  "editor.fontLigatures": false
+}
+```
+
+Prettier のデフォルト設定
+
+```json
+{
+  "printWidth": 80, // 1行の最大文字数
+  "tabWidth": 2, // インデントのスペース数
+  "useTabs": false, // タブではなくスペースを使用
+  "semi": true, // セミコロンを付ける
+  "singleQuote": false, // ダブルクォートを使用
+  "quoteProps": "as-needed", // 必要な時だけオブジェクトのキーをクォートで囲む
+  "jsxSingleQuote": false, // JSXでダブルクォートを使用
+  "trailingComma": "all", // 可能な限り末尾カンマを付ける（ES5ではなくall）
+  "bracketSpacing": true, // オブジェクトリテラルの括弧内にスペースを入れる
+  "bracketSameLine": false, // JSXの閉じ括弧を次の行に配置
+  "arrowParens": "always", // アロー関数の引数を常に括弧で囲む
+  "proseWrap": "preserve", // Markdownのテキストを折り返さない
+  "htmlWhitespaceSensitivity": "css", // HTMLの空白の扱い
+  "endOfLine": "lf", // 改行コードをLF（Unix形式）に統一
+  "embeddedLanguageFormatting": "auto" // 埋め込み言語も自動フォーマット
+}
+```

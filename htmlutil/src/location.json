@@ -1,34 +1,34 @@
 {
-    "pref": [
-        {
-            "code" : "11",
-            "name" : "東京"    
-        },
-        {
-            "code" : "12",
-            "name" : "千葉"
-        }
-    ],
-    "town": [
-        {
-            "belong_city_code": "11",
-            "code" : "0a",
-            "name" : "世田谷区"
-        },
-        {
-            "belong_city_code": "11",
-            "code" : "0b",
-            "name" : "港区"
-        },
-        {
-            "belong_city_code": "12",
-            "code" : "1a",
-            "name" : "千葉市"
-        },
-        {
-            "belong_city_code": "12",
-            "code" : "1b",
-            "name" : "船橋市"
-        }
-    ]
+  "pref": [
+    {
+      "code": "11",
+      "name": "東京"
+    },
+    {
+      "code": "12",
+      "name": "千葉"
+    }
+  ],
+  "town": [
+    {
+      "belong_city_code": "11",
+      "code": "0a",
+      "name": "世田谷区"
+    },
+    {
+      "belong_city_code": "11",
+      "code": "0b",
+      "name": "港区"
+    },
+    {
+      "belong_city_code": "12",
+      "code": "1a",
+      "name": "千葉市"
+    },
+    {
+      "belong_city_code": "12",
+      "code": "1b",
+      "name": "船橋市"
+    }
+  ]
 }
