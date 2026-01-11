@@ -1,3 +1,5 @@
+import { availableParallelism } from 'os';
+
 export class Calc {
   private calcadd = (add_number: number) => {
     console.log('add_number ' + add_number);
