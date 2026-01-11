@@ -1,70 +1,63 @@
-
 export class Calc {
-
-  private calcadd = (add_number:number) => {
+  private calcadd = (add_number: number) => {
     console.log('add_number ' + add_number);
-    const url:string = `http://localhost/async_await_promise/calc.php?add=${add_number}`;
-    return fetch(url)
-    .then((response:Response) => {
+    const url: string = `http://localhost/async_await_promise/calc.php?add=${add_number}`;
+    return fetch(url).then((response: Response) => {
       console.log('after ' + add_number);
       if (!response.ok) {
         throw new Error('例外を投げる');
       }
       return response.json();
-    })
-  }    
+    });
+  };
 
-  public start = async() => {
+  public start = async () => {
     console.log('promiseのstart await');
     const start = performance.now();
 
-    for (let i =1; i < 10; i++) {
+    for (let i = 1; i < 10; i++) {
       const res = await this.calcadd(10 * i);
       // console.log(res);
     }
     const end = performance.now();
-    console.log('10回分　promiseのend await ' +  (end - start ) / 1000 + '秒');
+    console.log('10回分　promiseのend await ' + (end - start) / 1000 + '秒');
+  };
 
-  }
-
-  public start2 = async() => {
+  public start2 = async () => {
     console.log('promiseのstart 非同期');
     const start = performance.now();
     const PromiseArr = [];
-    for (let i =1; i < 10; i++) {
+    for (let i = 1; i < 10; i++) {
       // awaitがない分関数の実行自体 console.log(add_number・・・)は先行して出力される
       const res = this.calcadd(10 * i);
-      PromiseArr.push(res)
+      PromiseArr.push(res);
     }
 
     Promise.all(PromiseArr).then((res) => {
-      res.forEach(element => {
+      res.forEach((element) => {
         console.log('aaaa');
       });
       console.log(res);
       const end = performance.now();
-      console.log('10回分 promiseのend 非同期' +  (end - start ) / 1000 + '秒');  
-    })
-  }
+      console.log('10回分 promiseのend 非同期' + (end - start) / 1000 + '秒');
+    });
+  };
 
-  public start3 = async() => {
+  public start3 = async () => {
     console.log('foreachのawait 非同期');
     const start = performance.now();
     const number_arr = [];
-    for (let i =1; i < 10; i++) {
+    for (let i = 1; i < 10; i++) {
       number_arr.push(i);
     }
 
     // 非同期的にforeachがはかれる start1との比較に注意
-    number_arr.forEach(async (i:number) => {
+    number_arr.forEach(async (i: number) => {
       const res = await this.calcadd(10 * i);
-    })
+    });
 
     const end = performance.now();
     // ここでは10回分終わってない
-    console.log('10回分　foreachのend await ' +  (end - start ) / 1000 + '秒');
-   
-  }
+    console.log('10回分　foreachのend await ' + (end - start) / 1000 + '秒');
+  };
 }
-
-
