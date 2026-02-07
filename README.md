@@ -341,11 +341,25 @@ setting.json
     "!Split sequence",
     "!Join sequence"
   ],
-  "prettier.useEditorConfig": false,
   "workbench.activityBar.orientation": "vertical",
   "eslint.codeActionsOnSave.rules": null,
-  "editor.fontLigatures": false
+  "editor.fontLigatures": false,
+  "[go]": {
+    "editor.defaultFormatter": "golang.go",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit" // インポート整理
+    }
+  },
+  "[markdown]": { // マークダウンは余計なフォーマットがいらないので不要
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": null
+  },
+  "workbench.settings.applyToAllProfiles": [],
+  "go.useLanguageServer": true,
+  "go.toolsManagement.autoUpdate": true
 }
+
 ```
 
 Prettier のデフォルト設定
